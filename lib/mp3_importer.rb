@@ -7,8 +7,6 @@ attr_accessor :path, :file
 
   def initialize(file)
     @file = file
-
-
   end
 
   def path
@@ -18,6 +16,7 @@ attr_accessor :path, :file
 
   def import
    self.files.each do |x|
+   files.each do |x|
     Song.new_by_filename(x)
     end
   end
@@ -27,4 +26,5 @@ attr_accessor :path, :file
   end
 
 
+end
 end

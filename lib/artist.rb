@@ -36,6 +36,13 @@ attr_accessor :name
     if self.find(name)
       self.find(name)
    else
+   end
+
+  def self.find_or_create_by_name(name)
+    if @@all.detect do |x|
+         x.name == name
+      end
+    else
     self.new(name)
    end
  end
@@ -43,8 +50,10 @@ attr_accessor :name
   def print_songs
     @songs.each do |x|
       puts x.name
+
     end
   end
 
 
+end
 end
